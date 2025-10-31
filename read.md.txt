@@ -1,0 +1,7 @@
+# baguni-connect
+
+바구니삼촌 셀러 모집 웹폼입니다.
+
+- 목적: 유통 셀러 모집 / 상생 구조 구축 / 상품 공유
+- 사용 기술: HTML, CSS, JavaScript, Google Apps Script, Google Sheets
+- 웹 링크: https://username.github.io/baguni-connect/

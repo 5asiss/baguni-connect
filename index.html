@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>바구니삼촌 셀러 모집 (baguni-connect)</title>
+<style>
+body { font-family: "Noto Sans KR", sans-serif; background:#f8fff5; padding:30px; }
+form { background:white; max-width:500px; margin:auto; padding:20px; border-radius:15px; box-shadow:0 0 10px #ccc; }
+input, select, textarea { width:100%; margin-bottom:10px; padding:10px; border-radius:8px; border:1px solid #ddd; }
+button { background:#6cbf4b; color:white; padding:12px; border:none; border-radius:8px; cursor:pointer; width:100%; }
+button:hover { background:#57a53e; }
+</style>
+</head>
+<body>
+
+<h2>🧺 바구니삼촌 셀러 모집 (baguni-connect)</h2>
+<p>함께 제품을 제안하고 수익을 나누는 상생형 유통 커뮤니티입니다.</p>
+
+<form id="baguniForm">
+  <input type="text" name="name" placeholder="이름" required>
+  <input type="text" name="phone" placeholder="연락처" required>
+  <input type="email" name="email" placeholder="이메일(선택)">
+  <input type="text" name="region" placeholder="활동지역">
+  <input type="text" name="channel" placeholder="판매채널 (예: 쿠팡, 네이버 등)">
+  <textarea name="products" placeholder="보유상품 또는 관심있는 품목"></textarea>
+  <textarea name="comment" placeholder="협업의견 / 기대사항"></textarea>
+  <select name="meetup">
+    <option value="참여 희망">오프라인 모임 참여 희망</option>
+    <option value="일정에 따라 가능">일정에 따라 가능</option>
+    <option value="불참">불참</option>
+  </select>
+  <button type="submit">제출하기</button>
+</form>
+
+<script>
+document.getElementById('baguniForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const form = e.target;
+  const data = {
+    name: form.name.value,
+    phone: form.phone.value,
+    email: form.email.value,
+    region: form.region.value,
+    channel: form.channel.value,
+    products: form.products.value,
+    comment: form.comment.value,
+    meetup: form.meetup.value
+  };
+  
+  fetch("🔗여기에_Apps_Script_URL_붙여넣기", {
+    method: "POST",
+    mode: "no-cors",
+    body: JSON.stringify(data)
+  }).then(() => {
+    alert("제출되었습니다! 감사합니다 :)");
+    form.reset();
+  }).catch(err => alert("오류가 발생했습니다. 다시 시도해주세요."));
+});
+</script>
+
+</body>
+</html>
